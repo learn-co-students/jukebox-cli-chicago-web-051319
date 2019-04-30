@@ -48,7 +48,7 @@ end
 
 def run(col)
   puts "Please enter a command:"
-  a = ""
+  a = gets.chomp
   
   while a != "exit"
     if a == "help"
@@ -67,4 +67,5 @@ def run(col)
   end
 end
 
+# currently working to make things do more than just pass local tests
 run(songs)
