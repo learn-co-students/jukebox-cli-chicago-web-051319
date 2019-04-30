@@ -47,24 +47,15 @@ def exit_jukebox
 end
 
 def run(col)
+  help
   puts "Please enter a command:"
-  a = gets.chomp
+  cmd = "exit"
   
-  while a != "exit"
-    if a == "help"
-      help
-    elsif a == "play"
-      puts "Enter Song name or track number:"
-      play(b)
-    elsif a == "list"
-      list(col)  
-    elsif a == "exit"
-      a = "exit"
-      exit_jukebox
-    else
-      puts "Invalid input, type 'help' for commands"
-    end
+  while cmd != "exit"
+    cmd = "exit"
   end
+  
+  exit_jukebox
 end
 
 # currently working to make things do more than just pass local tests
