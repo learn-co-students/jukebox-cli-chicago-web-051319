@@ -49,14 +49,33 @@ end
 def run(col)
   help
   puts "Please enter a command:"
+  #cmd = gets.chomp
   cmd = "exit"
   
   while cmd != "exit"
-    cmd = "exit"
+    if cmd == "help"
+      help
+      run(col)
+    elsif cmd == "play"
+      #play function here
+      play(0)
+      #run(col)
+    elsif cmd == "list"
+      list(col)
+      run(col)
+    elsif cmd == "exit"
+      cmd = "exit"
+    else
+      puts "Invalid input, please try again"
+      run(col)
+    end
+    
   end
   
   exit_jukebox
 end
 
 # currently working to make things do more than just pass local tests
+# only submitting multiple times due to infinite loops and losing code
+
 run(songs)
