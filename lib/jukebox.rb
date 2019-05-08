@@ -19,22 +19,25 @@ def help
 end
 
 def list (songs)
-  puts songs.each_with_index 
+  songs.each_with_index do |song, i|
+    puts "#{i+1}. #{song}"
+  end
 end
 
 def play (songs)
   puts "Please enter a song name or number:"
   song = gets.chomp
   songs.each do |song_list|
-  if song == song_list
+  if songs.include? (song) 
     puts "Playing #{song}"
-  elsif song == [1..9]
-  puts "Playing#{songs[song - 1]}"
+  elsif (1..10).to_a.include? (song.to_i)
+  puts "Playing#{songs[song.to_i - 1]}"
   else 
     puts "Invalid input, please try again"
   end
-
 end 
+end 
+
 
 def exit_jukebox
   puts "Goodbye"
